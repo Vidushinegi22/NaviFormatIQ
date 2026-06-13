@@ -1,0 +1,20 @@
+{
+  "name": "Pharmaceutical Industry Report",
+  "corpus_path": "pharma_corpus",
+  "glossary": {
+    "GLP-1": "glucagon-like peptide-1 receptor agonists used primarily in type 2 diabetes and weight management",
+    "ADC": "antibody-drug conjugates",
+    "RWE": "real-world evidence",
+    "IRA": "Inflation Reduction Act (US drug pricing legislation)",
+    "EMA": "European Medicines Agency",
+    "FDA": "United States Food and Drug Administration",
+    "CAGR": "compound annual growth rate",
+    "biosimilar": "a biologic medical product highly similar to an already-approved reference biologic",
+    "patent cliff": "the expected sharp revenue decline when a blockbuster drug loses patent protection"
+  },
+  "format_rules": [
+    "must include: source citations",
+    "Section titles use Title Case.",
+    "All monetary figures use USD with a $ prefix and the units suffix (e.g. $1.48T)."
+  ]
+}

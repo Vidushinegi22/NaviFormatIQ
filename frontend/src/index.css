@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Navi FormatiQ — Global styles.
+  Inter is loaded in index.html. We tune typography and focus rings here
+  to match the enterprise SaaS aesthetic (Microsoft / Adobe inspired).
+*/
+
+@layer base {
+  /*
+    shadcn/ui design tokens — mapped to the Navi FormatiQ brand palette so the
+    shadcn primitives in `components/ui/*` render in-brand (Deep Navy primary,
+    ink-scale neutrals). Light theme only; values are HSL channels.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 41% 9%;        /* ink-900 #0D131F */
+    --card: 0 0% 100%;
+    --card-foreground: 222 41% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 41% 9%;
+    --primary: 224 90% 20%;          /* brand-500 #051D60 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 204 22% 95%;        /* ink-100 #EEF2F4 */
+    --secondary-foreground: 222 30% 16%;
+    --muted: 204 22% 95%;
+    --muted-foreground: 208 13% 41%; /* ink-500 #5A6976 */
+    --accent: 204 22% 95%;
+    --accent-foreground: 222 30% 16%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 204 19% 88%;           /* ink-200 #DCE3E7 */
+    --input: 204 19% 88%;
+    --ring: 224 90% 20%;             /* brand-500 */
+    --radius: 0.75rem;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Accessible focus ring across the app. */
+  :focus-visible {
+    outline: 2px solid #051D60;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Strip default focus outline only where we replace it. */
+  button:focus,
+  a:focus {
+    outline: none;
+  }
+}
+
+@layer components {
+  .nf-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white
+           shadow-sm transition-all duration-200
+           hover:bg-brand-600 hover:shadow-card-hover
+           focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2
+           disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .nf-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           px-3 py-2 text-sm font-medium text-ink-600
+           transition-colors duration-150
+           hover:bg-ink-100 hover:text-ink-800
+           focus-visible:ring-2 focus-visible:ring-brand-500;
+  }
+
+  .nf-card {
+    @apply rounded-2xl bg-white shadow-card border border-ink-100;
+  }
+
+
+
+
+  /* ── Fixed footer ────────────────────────────────────────────────── */
+
+  .nf-fixed-footer {
+    @apply fixed bottom-0 left-0 right-0 z-30
+           flex items-center justify-between
+           bg-white border-t border-ink-200
+           px-6 py-3 shadow-footer;
+  }
+
+  /* ── Campaign / analysis card ────────────────────────────────────── */
+
+  .nf-campaign-card {
+    @apply rounded-xl border border-ink-100 bg-white p-5
+           shadow-campaign transition-all duration-200
+           hover:border-brand-200 hover:shadow-campaign-hover
+           cursor-pointer;
+  }
+}

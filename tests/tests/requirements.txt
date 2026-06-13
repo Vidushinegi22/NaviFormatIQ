@@ -1,0 +1,26 @@
+fastapi>=0.115.0
+uvicorn>=0.34.0
+python-docx>=1.1.0
+pdfplumber>=0.11.0
+PyMuPDF>=1.25.0
+Pillow>=11.0.0
+python-multipart>=0.0.20
+pydantic>=2.10.0
+pydantic-settings>=2.5.0
+
+# Template-aware rendering
+docxtpl>=0.16.0
+Jinja2>=3.1.0
+
+# LLM + Azure Document Intelligence (optional at runtime; modules
+# degrade gracefully if these aren't configured)
+openai>=1.40.0
+azure-ai-documentintelligence>=1.0.0
+azure-core>=1.30.0
+
+# OCR fallback for scanned PDFs (requires system 'tesseract' + 'poppler')
+pytesseract>=0.3.10
+pdf2image>=1.17.0
+
+# Lightweight RAG retriever
+rank-bm25>=0.2.2

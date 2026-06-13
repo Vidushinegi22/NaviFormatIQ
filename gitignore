@@ -1,0 +1,128 @@
+# ---------------------------------------------------------------------------
+# Secrets & local config
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+/lib/
+/lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# pytest / coverage / type-checker caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.cache/
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Generated test artifacts
+# ---------------------------------------------------------------------------
+# Everything in tests/sample_test_files/ is regenerated on every test run.
+# Keep the directory tracked (via .gitkeep) but ignore its contents.
+tests/sample_test_files/*
+!tests/sample_test_files/.gitkeep
+
+# Stale top-level artifacts from before the move (should never be checked in)
+tests/test_sample.docx
+tests/test_output.docx
+tests/test_style_transfer.docx
+tests/test_from_json.docx
+tests/test_template.docx
+tests/test_draft.docx
+tests/test_pipeline_output.docx
+tests/test_content.json
+tests/test_styling.json
+tests/test_two_lists_*.docx
+tests/test_two_lists_*.pdf
+tests/test_mixed_*.docx
+tests/test_mixed_*.pdf
+
+# Domain Profile corpora can grow large — keep the seed corpus under
+# tests/domain_profiles/<id>_corpus/ but ignore any *_corpus_local/ override.
+tests/domain_profiles/*_corpus_local/
+
+# ---------------------------------------------------------------------------
+# Editor / IDE
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+.DS_Store
+
+# ---------------------------------------------------------------------------
+# Node / front-end 
+# ---------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Office / OS scratch files
+# ---------------------------------------------------------------------------
+~$*.docx
+~$*.doc
+~$*.xlsx
+~$*.pptx
+*.tmp
+.~lock.*
+Thumbs.db
+
+.venv_mac/
+
+# Backend: track source; ignore only local dev artifacts
+backend/.venv/
+backend/.venv_mac/
+backend/data/uploads/
+backend/dev.db 
+
+
+.claude/
